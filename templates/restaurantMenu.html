@@ -14,7 +14,7 @@
             <h2>Whats on the menu at {{restaurant.name}}:</h2>
         </div>
         <div>
-            <form>
+            <form action="{{ url_for('showMenu', restaurant_id=restaurant.id) }}" method="POST">
                 <input name='addMenuItem' type='Submit' value='Add a menu item'>
             </form>
         </div>
