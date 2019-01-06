@@ -29,7 +29,8 @@ class MenuItem(db.Model):
 @app.route('/')
 @app.route('/restaurants/')
 def restaurants():
-    return 'restaurants'
+    restaurants = Restaurant.query.all()
+    return render_template('restaurants.html', restaurants=restaurants)
 
 
 # Add new restaurant
