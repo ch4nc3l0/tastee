@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.7.1
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, request, url_for, render_template
+from flask import Flask, request, url_for, render_template, redirect
 
 
 app = Flask(__name__)
@@ -27,16 +27,24 @@ class MenuItem(db.Model):
     
 # Show all restaurants
 @app.route('/')
-@app.route('/restaurants/')
+@app.route('/restaurants/', methods=['GET', 'POST'])
 def restaurants():
     restaurants = Restaurant.query.all()
+    if request.method == 'POST':
+        return redirect(url_for('newRestaurant'))
     return render_template('restaurants.html', restaurants=restaurants)
 
 
 # Add new restaurant
-@app.route('/restaurant/new')
+@app.route('/restaurant/new', methods=['GET', 'POST'])
 def newRestaurant():
-    return 'add new rest'
+    if request.method == 'POST':
+        newRestaurant = Restaurant(name = request.form['newRestaurant'])
+        db.session.add(newRestaurant)
+        db.session.commit()
+        return redirect(url_for('restaurants'))
+    elif request.method == 'GET':
+        return render_template('newRestaurant.html')
 
 
 # Edit restaurant

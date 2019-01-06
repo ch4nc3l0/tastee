@@ -8,9 +8,12 @@
 <body>
     <h1>Tastee</h1>
     <h3>Find the best Tasteeng restaurants around!</h3>
+    <form action="{{ url_for('restaurants') }}" method="POST">
+    <input name='addRestaurant' type='Submit' value='Add a restaurant'>
+    </form>
     <ul>
     {% for restaurant in restaurants %}
-    <li><a href={{ url_for('restaurants', restaurants='restaurants') }}>{{restaurant.name}}</a></li>
+    <li><a href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">{{restaurant.name}}</a></li>
     {% endfor %}
     </ul>
     

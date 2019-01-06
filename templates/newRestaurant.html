@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Know a tastee restaurant? Lets add it!</h1>
+    <form action='{{ url_for("newRestaurant") }}' method='POST'>
+        <p>Restaurant Name:</p>
+        <input name='newRestaurant' type='text' placeholder='Restaurant Name'>
+        <input type='Submit' value='Add Restaurant'>
+    </form>
     
 </body>
 </html>
