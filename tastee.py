@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3.7.1
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, url_for, render_template
 
