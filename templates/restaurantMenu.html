@@ -25,7 +25,7 @@
             <a>{{item.description}}</a>
             <a>{{item.course}}</a>
             <a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Edit</a>
-            <a>Delete</a>
+            <a href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Delete</a>
             </div>
         {% endfor %}
     </div>

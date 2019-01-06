@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div>
+            <h1>Nobody ate {{menu.name}} anyway... right?</h1>
+        </div>
+        <div>
+            <form action="{{ url_for('deleteMenuItem', restaurant_id=menu.restaurant_id, menuItem_id=menu.id,) }}" method="POST">
+                <p>Do you really want to delete {{menu.name}} and its data forever?</p>
+                <input name='redirect' type='submit' value='Get me outta here'>
+                <input name='delete' type='submit' value='Yeah get rid of {{menu.name}}'>
+            </form>
+            
+        </div>
+    </div>
 </body>
 </html>
