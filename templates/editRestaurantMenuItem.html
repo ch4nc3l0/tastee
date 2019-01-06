@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div>
+            <h1>Whoops what were we thinking?</h1>
+        </div>
+        <div>
+            <form action="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=menu.id) }}" method="POST">
+                <p>Edit menu item name:</p>
+                <input name='editedMenuName' type='text' value="{{menu.name}}">
+                <p>Edit menu item price:</p>
+                <input name='editedMenuPrice' type='text' value="{{menu.price}}">
+                <p>Edit menu item course:</p>
+                <input name='editedMenuCourse' type='text' value="{{menu.course}}">
+                <p>Edit menu item description:</p>
+                <input name='editedMenuDescription' type='text' value="{{menu.description}}">
+                <input type='submit' value='Submit Changes'>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -24,7 +24,7 @@
             <a>{{item.price}}</a>
             <a>{{item.description}}</a>
             <a>{{item.course}}</a>
-            <a>Edit</a>
+            <a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Edit</a>
             <a>Delete</a>
             </div>
         {% endfor %}
