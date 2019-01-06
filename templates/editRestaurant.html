@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div>
+            <h1>Whoops what were we thinking?</h1>
+        </div>
+        <div>
+            <form action="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}" method="POST">
+                <p>Edit Restaurant Name:</p>
+                <input name='editedRestaurantName' type='text' placeholder='{{restaurant.name}}'>
+                <input type='submit' value='Edit Name'>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
