@@ -78,7 +78,9 @@ def deleteRestaurant(restaurant_id):
 # Show all menu items for a restaurant
 @app.route('/restaurant/<int:restaurant_id>/menu')
 def showMenu(restaurant_id):
-    return 'Menu here'
+    restaurant = Restaurant.query.filter_by(id = restaurant_id).one()
+    menu = MenuItem.query.filter_by(restaurant_id=restaurant_id)
+    return render_template('restaurantMenu.html', restaurant_id='restaurant_id', restaurant=restaurant, menu=menu)
 
 
 # Add new menu items to a restaurant

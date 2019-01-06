@@ -7,12 +7,17 @@
 </head>
 <body>
     <div>
-        <h1>Tastee</h1>
-        <h3>Find the best Tasteeng restaurants around!</h3>
-        <form action="{{ url_for('restaurants') }}" method="POST">
-        <input name='addRestaurant' type='Submit' value='Add a restaurant'>
-        </form>
         <div>
+            <h1>Tastee</h1>
+        </div>
+        <div>
+            <h3>Find the best Tasteeng restaurants around!</h3>
+        </div>
+        <div>
+            <form action="{{ url_for('restaurants') }}" method="POST">
+                <input name='addRestaurant' type='Submit' value='Add a restaurant'>
+            </form>
+        </div>
         {% for restaurant in restaurants %}
             <div>
             <a href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">{{restaurant.name}}</a>
@@ -20,7 +25,6 @@
             <a href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
             </div>
         {% endfor %}
-        </div>
     </div>
 </body>
 </html>

@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div>
+            <h1>Tastee</h1>
+        </div>
+        <div>
+            <h2>Whats on the menu at {{restaurant.name}}:</h2>
+        </div>
+        <div>
+            <form>
+                <input name='addMenuItem' type='Submit' value='Add a menu item'>
+            </form>
+        </div>
+        {% for item in menu %}
+            <div>
+            <a>{{item.name}}</a>
+            <a>{{item.price}}</a>
+            <a>{{item.description}}</a>
+            <a>{{item.course}}</a>
+            <a>Edit</a>
+            <a>Delete</a>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
