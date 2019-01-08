@@ -1,0 +1,150 @@
+$blue: #2980b9;
+$green: #16a085;
+$greenHover: #31b869;
+$greenActive: #4be48a;
+$red: #e74c3c;
+$redHover: #ff6d5c;
+$redActive: #ff9c91;
+$white: #eff4ff;
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+    html{
+        background: $blue;
+        font-size: 62.5%;
+    }
+    body{
+        font-size: 1.6rem;
+    }
+.restaurant--nav{
+    align-items: center;
+    border-bottom: 1px solid rgba(235, 240, 241,.3);
+    display: flex;
+    height: 8rem;
+    justify-content: space-around;    
+}
+    .restaurant--logo--wrapper{
+        align-items: center;
+        display: flex;
+    }
+    .restaurant--logo{
+        height: 40px;
+        margin-right: 3px; 
+    }
+    .restaurant--logo--text{
+        color: $white;
+        font-size: 3.8rem;
+        font-weight: bold;
+        margin-right: 1%;
+    }
+    .restaurant--add--button{
+        background: $green;
+        border: 4px solid $green;
+        border-radius: 14px;
+        color: $white;
+        cursor: pointer;
+        font-size: 1.6rem;
+        margin-left: 5%;
+        padding: 1rem;
+        text-decoration: none;
+        transition: 300ms;
+        &:hover{
+            background: $greenHover;
+            border: 4px solid $greenHover;
+            transition: 300ms;
+        }
+        &:focus{
+            outline: thin solid $green;
+        }
+        &:active{
+        background: $greenActive;
+        border: 4px solid $greenActive;
+        }
+    }
+.restaurant--slogan{
+    color: $white;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+.restaurant--list{
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+    .restaurant--listItem{
+        align-items: center;
+        background: $white;
+        border-radius: 14px;
+        display: flex;
+        justify-content: space-between;
+        margin: 1.1rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 40rem;
+    }
+        .list--name{
+            color: black;
+            cursor: pointer;
+            font-size: 3rem;
+            padding: 1.4rem;
+            text-decoration: none;
+        }
+        .list--button--wrapper{
+            display: flex;
+            flex: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+            .list--edit{
+                background: $green;
+                border: 4px solid $green;
+                border-radius: 14px;
+                color: $white;
+                cursor: pointer;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+                padding: 3px;
+                text-decoration: none;
+                transition: 300ms;
+                &:hover{
+                    background: $greenHover;
+                    border: 4px solid $greenHover;
+                    transition: 300ms;
+                }
+                &:focus{
+                    outline: thin solid $green;
+                }
+                &:active{
+                background: $greenActive;
+                border: 4px solid $greenActive;                
+                }
+            }
+            .list--delete{
+                background: $red;
+                border: 4px solid $red;
+                border-radius: 14px;
+                color: #eff4ff;
+                cursor: pointer;
+                font-size: 1.6rem;
+                padding: 3px;
+                text-decoration: none;
+                transition: 300ms;
+                &:hover{
+                    background: $redHover;
+                    border: 4px solid $redHover;
+                    transition: 300ms;
+                }
+                &:focus{
+                    outline: thin solid $red;
+                }
+                &:active{
+                background: $redActive;
+                border: 4px solid $redActive;
+                }
+            }

@@ -141,3 +141,4 @@ if __name__ == '__main__':
     app.secret_key = 'key'
     app.debug = True
     app.run(host = '192.168.50.4', port = 8080)
+    

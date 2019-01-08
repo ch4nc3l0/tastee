@@ -22,6 +22,7 @@ This will create a new empty database for the app.
 
 # Attributions
 - This website was developed as part of the full-stack nanodegree from Udacity. The instructor Lorenzo provided the basic layout and code structure of the web-site.
+- Thank you Pettycon, for uploading the burger icon to Pixabay [Link Here](https://pixabay.com/en/burger-eat-meal-food-hamburger-1674881/).
 # License
 MIT License
 

@@ -3,28 +3,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="../static/restaurants.css">
+    
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <div>
-            <h1>Tastee</h1>
-        </div>
-        <div>
-            <h3>Find the best Tasteeng restaurants around!</h3>
-        </div>
-        <div>
-            <form action="{{ url_for('restaurants') }}" method="POST">
-                <input name='addRestaurant' type='Submit' value='Add a restaurant'>
-            </form>
-        </div>
-        {% for restaurant in restaurants %}
-            <div>
-            <a href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">{{restaurant.name}}</a>
-            <a href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a>
-            <a href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
+    <div class="restaurant">
+        <div class="restaurant--nav">
+            <div class="restaurant--logo--wrapper">
+                <div class="restaurant--logo">
+                    <object class="restaurant--logo" type="image/svg+xml" data="../static/tastee_burger.svg"></object>
+                </div>
+                <div class="restaurant--logo--text">
+                    <p>Tastee</p>
+                </div>
             </div>
-        {% endfor %}
+            
+            <div>
+                <form action="{{ url_for('restaurants') }}" method="POST">
+                    <input class='restaurant--add--button' name='addRestaurant' type='Submit' value='Add a restaurant'>
+                </form>
+            </div>
+        </div>
+
+        <div class="restaurant--slogan">
+                <p>Find the best "Tasteeing" restaurants around!</p>
+        </div>
+
+        <div class="restaurant--list">
+
+                
+
+            {% for restaurant in restaurants %}
+                <div class="restaurant--listItem">
+                    <div class="list--name--wrapper">
+                        <a class="list--name" href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">{{restaurant.name}}</a>
+                    </div>
+                    <div class="list--button--wrapper">
+                        <a class="list--edit" href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a>
+                        <a class="list--delete" href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
+                    </div>    
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,8 @@
+@import './restaurants.scss';
+
+*{
+    @extend *;
+}
+    html{
+    @extend html
+    }
