@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/deleteRestauarant.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/delRestauarant.css">
+    <title>Document1</title>
 </head>
 <body>
     <div>
@@ -12,20 +12,25 @@
         <div class="restaurant--nav">
             <div class="restaurant--logo--wrapper">
                 <div class="restaurant--logo">
-                    <object class="restaurant--logo"  type="image/svg+xml" data="../static/tastee_burger.svg"></object>
+                    <object class="restaurant--logo"  type="image/svg+xml" data="{{ url_for('static', filename='images/tastee_burger.svg') }}"></object>
                 </div>
                     <a class="restaurant--logo--text" href="{{ url_for('restaurants') }}">Tastee</a>
                 </div>
         </div>
 
-        <div>
-            <h1>{{restaurant.name}} isn't all that great... right?</h1>
+        <div class="newRest--wrapper">
+            <div class="newRest--heading">
+                <p>{{restaurant.name}} isn't all that great... right?</p>
+            </div>
         </div>
-        <div>
+
+        <div class="newRest--wrapper">
             <form action="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}" method="POST">
-                <p>Do you really want to delete {{restaurant.name}} and its data forever?</p>
-                <input name='redirect' type='submit' value='Get me outta here'>
-                <input name='delete' type='submit' value='Yeah get rid of {{restaurant.name}}'>
+                <p class='delRest--heading'>Do you really want to delete {{restaurant.name}} and its data forever?</p>
+                <div class="newRest--form--text--wrapper">
+                    <input class="list--edit" name='redirect' type='submit' value='Get me outta here'>
+                    <input class='list--delete' name='delete' type='submit' value='Yeah get rid of {{restaurant.name}}'>
+                </div>
             </form>
             
         </div>

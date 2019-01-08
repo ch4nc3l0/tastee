@@ -1,0 +1,23 @@
+@import './restaurants.scss';
+@import './newRestaurant.scss';
+
+.restaurant--logo--wrapper{
+    margin-right: 50%;
+}
+.delrest--heading{
+    @extend .newRest--heading;
+    font-size: 1.9rem;
+    margin-top: .8rem;
+}
+.newRest--form--text--wrapper{
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+.list--edit{
+    font-size: 1.6rem;
+    height: 6rem;
+}
+.list--delete{
+    font-size: 1.6rem;
+    height: 6rem;
+}
