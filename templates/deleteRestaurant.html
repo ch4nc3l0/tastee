@@ -3,10 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/deleteRestauarant.css">
     <title>Document</title>
 </head>
 <body>
     <div>
+
+        <div class="restaurant--nav">
+            <div class="restaurant--logo--wrapper">
+                <div class="restaurant--logo">
+                    <object class="restaurant--logo"  type="image/svg+xml" data="../static/tastee_burger.svg"></object>
+                </div>
+                    <a class="restaurant--logo--text" href="{{ url_for('restaurants') }}">Tastee</a>
+                </div>
+        </div>
+
         <div>
             <h1>{{restaurant.name}} isn't all that great... right?</h1>
         </div>

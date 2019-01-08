@@ -3,15 +3,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type='text/css' href="../static/newRestaurant.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Know a tastee restaurant? Lets add it!</h1>
-    <form method='POST'>
-        <p>Restaurant Name:</p>
-        <input name='newRestaurant' type='text' placeholder='Restaurant Name'>
-        <input type='Submit' value='Add Restaurant'>
-    </form>
+
+    <div class="restaurant--nav">
+            <div class="restaurant--logo--wrapper">
+                <div class="restaurant--logo">
+                    <object class="restaurant--logo"  type="image/svg+xml" data="../static/tastee_burger.svg"></object>
+                </div>
+                    <a class="restaurant--logo--text" href="{{ url_for('restaurants') }}">Tastee</a>
+            </div>
+        </div>
+
+<div class="newRest--wrapper">
+    <div class="newRest--heading">
+        <p>Know a Tastee restaurant? Lets add it!</p>
+    </div>
+
+    <div class="newRest--form">
+        <form method='POST'>
+            <p class="newRest--form--heading">Restaurant Name:</p>
+            <div class="newRest--form--text--wrapper">
+                <input class="newRest--form--textbox" name='newRestaurant' type='text' placeholder='Restaurant Name'>
+                <input class="list--edit" type='Submit' value='Add Restaurant'>
+            </div>
+        </form>
+    </div>
+</div>
     
 </body>
 </html>
