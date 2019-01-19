@@ -1,8 +1,6 @@
 @import './restaurants.scss';
 
-*{
-    @extend *;
-}
+
 .restaurant--logo--text{
     color: $white;
     text-decoration: none;

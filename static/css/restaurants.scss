@@ -8,15 +8,11 @@ $redActive: #ff9c91;
 $white: #eff4ff;
 
 *{
-    animation: fadein 100ms;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
 }
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+
     html{
         background: $blue;
         font-size: 62.5%;
@@ -29,7 +25,7 @@ $white: #eff4ff;
     border-bottom: 1px solid rgba(235, 240, 241,.3);
     display: flex;
     height: 8rem;
-    justify-content: space-around;    
+    justify-content: space-around !important;    
 }
     .restaurant--logo--wrapper{
         align-items: center;
