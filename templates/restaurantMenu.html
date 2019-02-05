@@ -33,17 +33,20 @@
             {% for item in menu %}
             <div class="restaurantMenu--listItem">
                 <div class="restaurantMenu--name--wrapper">
-                    <a>{{item.name}}</a>
-                    <a>{{item.course}}</a>
-                    <a>{{item.price}}</a>
+                    <a class="restaurantMenu--name">{{item.name}}</a>
+                    <a class="restaurantMenu--course">{{item.course}}</a>
+                    <a class="restaurantMenu--price">{{item.price}}</a>
                 </div>
                 <div class="restaurantMenu--name--description">
                     <a>{{item.description}}</a>
                 </div>
+               
                 <div class="restaurantMenu--name--buttons">
-                    <a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Edit</a>
-                    <a href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Delete</a>
-                </div> 
+                    <a class="editRest--button" href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Edit</a>
+                    <a class="deleteRest--button" href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menuItem_id=item.id) }}">Delete</a>
+                </div>
+              
+                 
             </div>
             {% endfor %}
         </div>

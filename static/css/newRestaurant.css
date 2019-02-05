@@ -22,8 +22,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 8rem;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
 }
 
 .restaurant--logo--wrapper {
