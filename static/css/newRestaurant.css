@@ -274,4 +274,15 @@ body {
   font-size: 1.4rem;
   height: 5rem;
 }
+
+.newRest--button--add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 15px;
+  margin-right: 1rem;
+}
 /*# sourceMappingURL=newRestaurant.css.map */
