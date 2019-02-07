@@ -3,26 +3,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../../static/css/delRestauarant.css">
     <title>Document</title>
 </head>
 <body>
     <div>
-        <div>
-            <h1>Whoops what were we thinking?</h1>
+
+        <div class="restaurant--nav">
+            <div class="restaurant--logo--wrapper">
+                <div class="restaurant--logo">
+                    <object class="restaurant--logo"  type="image/svg+xml" data="{{ url_for('static', filename='images/tastee_burger.svg') }}"></object>
+                </div>
+                <a class="restaurant--logo--text" href="{{ url_for('restaurants') }}">Tastee</a>
+            </div>
         </div>
-        <div>
-            <form action="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=menu.id) }}" method="POST">
-                <p>Edit menu item name:</p>
-                <input name='editedMenuName' type='text' value="{{menu.name}}">
-                <p>Edit menu item price:</p>
-                <input name='editedMenuPrice' type='text' value="{{menu.price}}">
-                <p>Edit menu item course:</p>
-                <input name='editedMenuCourse' type='text' value="{{menu.course}}">
-                <p>Edit menu item description:</p>
-                <input name='editedMenuDescription' type='text' value="{{menu.description}}">
-                <input type='submit' value='Submit Changes'>
-            </form>
+
+        <div class="newRest--wrapper">
+                <div class="newRest--heading">
+                    <p>Whoops what were we thinking?</p>
+                </div>
         </div>
+
+        <div class="editRest--wrapper">
+                <div class='editRest--form'>
+                        <form action="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menuItem_id=menu.id) }}" method="POST">
+                        <p class='editRest--name'>Edit Name:</p>
+                        <input class="editRest--textbox--menu" name='editedMenuName' type='text' value='{{menu.name}}'>
+                        <p class='editRest--name'>Edit Price:</p>
+                        <input class="editRest--textbox--menu" name='editedMenuPrice' type='text' value='{{menu.price}}'>
+                        <p class='editRest--name'>Edit Course:</p>
+                        <input class="editRest--textbox--menu" name='editedMenuCourse' type='text' value='{{menu.course}}'>
+                        <p class='editRest--name--description'>Edit Description:</p>
+                        <input class="editRest--textbox--menu" name='editedMenuDescription' type='text' value='{{menu.description}}'>
+                        <div class="editRest--button--menu--wrapper">
+                            <input class="editRest--button--menu" type='submit' value='Submit Menu Item Changes'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
     </div>
 </body>
 </html>
