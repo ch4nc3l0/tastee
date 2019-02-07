@@ -2,22 +2,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../static/css/delRestauarant.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
     <div>
-        <div>
-            <h1>Nobody ate {{menu.name}} anyway... right?</h1>
-        </div>
-        <div>
-            <form action="{{ url_for('deleteMenuItem', restaurant_id=menu.restaurant_id, menuItem_id=menu.id,) }}" method="POST">
-                <p>Do you really want to delete {{menu.name}} and its data forever?</p>
-                <input name='redirect' type='submit' value='Get me outta here'>
-                <input name='delete' type='submit' value='Yeah get rid of {{menu.name}}'>
-            </form>
-            
-        </div>
+        
+        
+
+        <div class="restaurant--nav">
+                <div class="restaurant--logo--wrapper">
+                    <div class="restaurant--logo">
+                        <object class="restaurant--logo"  type="image/svg+xml" data="{{ url_for('static', filename='images/tastee_burger.svg') }}"></object>
+                    </div>
+                        <a class="restaurant--logo--text" href="{{ url_for('restaurants') }}">Tastee</a>
+                    </div>
+            </div>
+
+            <div class="newRest--wrapper">
+                    <div class="newRest--heading">
+                        <p>Nobody ate {{menu.name}} anyway... right?</p>
+                    </div>
+                </div>
+        
+
+                <div class="newRest--wrapper">
+                        <form action="{{ url_for('deleteMenuItem', restaurant_id=menu.restaurant_id, menuItem_id=menu.id,) }}" method="POST">
+                                <p class='delRest--heading' >Do you really want to delete {{menu.name}} and its data forever?</p>
+                            <div class="newRest--form--text--wrapper">
+                                <input class="list--edit" name='redirect' type='submit' value='Get me outta here'>
+                                <input class='list--delete' name='delete' type='submit' value='Yeah get rid of {{menu.name}}'>
+                            </div>
+                        </form>
+                        
+                    </div>
+
+
     </div>
 </body>
 </html>
