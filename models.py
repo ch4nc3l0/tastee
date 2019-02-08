@@ -1,6 +1,8 @@
 from tastee import db
 
 
+app.config.from_object('config.ProductionConfig')
+
 class Restaurant(db.Model):
     __tablename__ = 'restaurant'
     name = db.Column(db.String(80), nullable = False)

@@ -6,10 +6,9 @@ import random, string, os
 
 
 app = Flask(__name__)
-app.secret_key = "a32sd156as"
-app.static_folder = 'static'
 app.config.from_object('config.ProductionConfig')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.static_folder = 'static'
 db = SQLAlchemy(app)
 
 from models import Restaurant, MenuItem
