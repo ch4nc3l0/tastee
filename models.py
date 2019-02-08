@@ -1,7 +1,6 @@
 from tastee import db
 
 
-app.config.from_object(os.environ['APP_SETTINGS'])
 
 class Restaurant(db.Model):
     __tablename__ = 'restaurant'
