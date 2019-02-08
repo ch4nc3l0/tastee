@@ -27,7 +27,7 @@
         <div class="editRest--wrapper">
             <div class='editRest--form'>
                 <form action="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}" method="POST">
-                    <p class='editRest--name'>Edit Restaurant Name:</p>
+                    <p>Edit Restaurant Name:</p>
                     <input class="editRest--textbox" name='editedRestaurantName' type='text' placeholder='{{restaurant.name}}'>
                     <input class="editRest--button" type='submit' value='Edit Name'>
                

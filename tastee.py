@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.7.1
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, request, url_for, render_template, redirect
+from flask import Flask, request, url_for, render_template, redirect, session
+import random, string
 
 
 app = Flask(__name__)
@@ -136,6 +137,13 @@ def deleteMenuItem(restaurant_id, menuItem_id):
             return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     elif request.method == 'GET':
         return render_template('deleteRestaurantMenu.html', restaurant_id='restaurant_id', menuItem_id=menuItem_id, menu=menu)
+
+
+@app.route('/login')
+def showLogin():
+    state = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(32))
+    session["state"] = state
+    return render_template("login.html", STATE=state)
 
 
 if __name__ == '__main__':
