@@ -7,25 +7,11 @@ import random, string
 
 app = Flask(__name__)
 app.static_folder = 'static'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///restaurantmenu.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xoouzbxomnkewv:cda6adaed150127e02ff3fd307dbcbf26da99fc512809e0bc2ae5d8a63c8ec68@ec2-50-17-193-83.compute-1.amazonaws.com:5432/dfac869n1u1id'
 db = SQLAlchemy(app)
 
+from models import Restaurant, MenuItem
 
-class Restaurant(db.Model):
-    __tablename__ = 'restaurant'
-    name = db.Column(db.String(80), nullable = False)
-    id = db.Column(db.Integer, primary_key = True)
-
-
-class MenuItem(db.Model):
-    __tablename__ = 'menuItem'
-    course = db.Column(db.String(250))
-    description = db.Column(db.String(250))
-    id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(80), nullable = False)
-    price = db.Column(db.String(8))
-    restaurant = db.relationship(Restaurant)
-    restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurant.id'))
     
     
 # Show all restaurants
