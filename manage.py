@@ -4,7 +4,7 @@ from flask_migrate import Migrate, MigrateCommand
 
 from tastee import app, db
 
-app.config.from_object('config.ProductionConfig')
+app.config.from_object(os.environ['APP_SETTINGS'])
 migrate = Migrate(app, db)
 manager = Manager(app)
 
