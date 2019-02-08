@@ -1,9 +1,10 @@
+import os
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
 from tastee import app, db
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xoouzbxomnkewv:cda6adaed150127e02ff3fd307dbcbf26da99fc512809e0bc2ae5d8a63c8ec68@ec2-50-17-193-83.compute-1.amazonaws.com:5432/dfac869n1u1id'
+app.config.from_object('config.ProductionConfig')
 migrate = Migrate(app, db)
 manager = Manager(app)
 
