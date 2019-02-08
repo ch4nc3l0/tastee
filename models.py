@@ -23,12 +23,13 @@ class MenuItem(db.Model):
     restaurant = db.relationship(Restaurant)
     restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurant.id'))
 
-    def __init__(self, course, description, price, restaurant, name):
+    def __init__(self, course, description, price, restaurant, name, restaurant_id):
         self.name = name
         self.course = course
         self.description = description
         self.price = price
         self.restaurant = restaurant
+        self.restaurant_id = restaurant_id
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
