@@ -132,10 +132,4 @@ def showLogin():
     state = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(32))
     session["state"] = state
     return render_template("login.html", STATE=state)
-
-
-if __name__ == '__main__':
-    app.secret_key = 'key'
-    app.debug = True
-    app.run(host = '192.168.50.4', port = 8080)
     
