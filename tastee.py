@@ -2,7 +2,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Flask, request, url_for, render_template, redirect, session, make_response, jsonify
-import random, string, os
+from apiclient import discovery
+from oauth2client import client
+import random, string, os, httplib2
 
 
 app = Flask(__name__)
@@ -127,3 +129,23 @@ def deleteMenuItem(restaurant_id, menuItem_id):
         return render_template('deleteRestaurantMenu.html', restaurant_id='restaurant_id', menuItem_id=menuItem_id, menu=menu)
 
 
+@app.route('/storeauthcode', methods=['GET', 'POST'])
+def storeauthcode():
+    if not request.headers.get('X-Requested-With'):
+        abort(403)
+    CLIENT_SECRET_FILE = 'client_secrets.json'
+
+    # Exchange auth code for access token, refresh token, and ID token
+    credentials = client.credentials_from_clientsecrets_and_code(
+    CLIENT_SECRET_FILE,
+    ['https://www.googleapis.com/auth/drive.appdata', 'profile', 'email'],
+    auth_code)
+
+    # Call Google API
+    http_auth = credentials.authorize(httplib2.Http())
+    drive_service = discovery.build('drive', 'v3', http=http_auth)
+    appfolder = drive_service.files().get(fileId='appfolder').execute()
+
+    # Get profile info from ID token
+    userid = credentials.id_token['sub']
+    email = credentials.id_token['email']
