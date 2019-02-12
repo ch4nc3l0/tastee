@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Article">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +6,23 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurants.css') }}">
     
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+    </script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+    </script>
+
+    <script>
+        function start() {
+            gapi.load('auth2', function() {
+            auth2 = gapi.auth2.init({
+            client_id: '1090073792352-i22ip09eeb2pqke3djl8p1jhtqsa0sd6.apps.googleusercontent.com'
+            // Scopes to request in addition to 'profile' and 'email'
+            //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
+
     <title>Tastee</title>
 </head>
 <body>
@@ -25,6 +42,17 @@
                     <input class='restaurant--add--button' name='addRestaurant' type='Submit' value='Add a restaurant'>
                 </form>
             </div>
+
+            <div>
+                <button id="signinButton">Sign in with Google</button>
+                <script>
+                    $('#signinButton').click(function() {
+                    // signInCallback defined in step 6.
+                    auth2.grantOfflineAccess().then(signInCallback);
+                    });
+                </script>
+            </div>
+
         </div>
 
         <div class="restaurant--slogan">
