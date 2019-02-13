@@ -154,3 +154,5 @@ def storeauthcode():
     # Get profile info from ID token
     userid = credentials.id_token['sub']
     email = credentials.id_token['email']
+    
+    redirect(url_for('restaurant'))
