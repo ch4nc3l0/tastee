@@ -136,7 +136,7 @@ def storeauthcode():
     
 
     if not request.headers.get('X-Requested-With'):
-        redirect(url_for('restaurant'))
+        return render_template('bad.html')
 
     CLIENT_SECRET_FILE = 'client_secrets.json'
 
