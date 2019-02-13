@@ -53,6 +53,11 @@
                 </script>
             </div>
 
+            <div>
+                <p id='user'> </p>
+                <script> $('#user').attr('style', 'display: none');</script>
+            </div>
+
         </div>
 
         <div class="restaurant--slogan">
@@ -83,11 +88,13 @@
         
             // Hide the sign-in button now that the user is authorized, for example:
             $('#signinButton').attr('style', 'display: none');
-        
+            
+            $('#user').attr('style', 'display: show');
+
             // Send the code to the server
             $.ajax({
               type: 'POST',
-              url: 'http://tasteemenu.herokuapp.com/storeauthcode',
+              url: 'https://tasteemenu.herokuapp.com/storeauthcode',
               // Always include an `X-Requested-With` header in every AJAX request,
               // to protect against CSRF attacks.
               headers: {
