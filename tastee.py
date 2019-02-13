@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from flask import Flask, request, url_for, render_template, redirect, session, make_response, jsonify
 from apiclient import discovery
 from oauth2client import client
-import random, string, os, httplib2
+import random, string, os, httplib2, json
 
 
 app = Flask(__name__)
@@ -132,7 +132,7 @@ def deleteMenuItem(restaurant_id, menuItem_id):
 @app.route('/storeauthcode', methods=['GET', 'POST'])
 def storeauthcode():
     if request.method == "POST":
-        auth_code = request.json['authResult']
+        auth_code = request.json['data']
     
 
     if not request.headers.get('X-Requested-With'):
