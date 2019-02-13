@@ -132,11 +132,12 @@ def deleteMenuItem(restaurant_id, menuItem_id):
 @app.route('/storeauthcode', methods=['GET', 'POST'])
 def storeauthcode():
     if request.method == "POST":
-        auth_code = request.json['data']
+        auth_code = request.json['authResult']
     
 
     if not request.headers.get('X-Requested-With'):
-        abort(403)
+        redirect(url_for('restaurant'))
+
     CLIENT_SECRET_FILE = 'client_secrets.json'
 
     # Exchange auth code for access token, refresh token, and ID token
