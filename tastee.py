@@ -132,7 +132,7 @@ def deleteMenuItem(restaurant_id, menuItem_id):
 @app.route('/storeauthcode', methods=['GET', 'POST'])
 def storeauthcode():
     if request.method == "POST":
-        auth_code = request.json['data']
+        auth_code = request.form['authResult']
     
 
     if not request.headers.get('X-Requested-With'):
