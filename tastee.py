@@ -131,6 +131,12 @@ def deleteMenuItem(restaurant_id, menuItem_id):
 
 @app.route('/storeauthcode', methods=['GET', 'POST'])
 def storeauthcode():
+
+    auth_code = None
+    if request.method == "POST":
+        auth_code = request.json['data']
+    
+
     if not request.headers.get('X-Requested-With'):
         abort(403)
     CLIENT_SECRET_FILE = 'client_secrets.json'
