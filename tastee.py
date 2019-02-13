@@ -9,7 +9,7 @@ import google.oauth2.credentials
 import random, string, os, httplib2, json
 
 # secrets file
-CLIENT_SECRETS_FILE = 'client_secrets.json'
+CLIENT_SECRETS_FILE = 'client_secret_1090073792352-i22ip09eeb2pqke3djl8p1jhtqsa0sd6.apps.googleusercontent.com.json'
 # scopes for login
 SCOPES = ['https://www.googleapis.com/auth/userinfo.profile']
 API_SERVICE_NAME = 'oauth2'
