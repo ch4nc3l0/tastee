@@ -2,7 +2,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Flask, request, url_for, render_template, redirect, session, make_response, jsonify
-from googleapiclient import discovery
+from apiclient import discovery
 from oauth2client import client
 import random, string, os, httplib2
 
