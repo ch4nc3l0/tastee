@@ -1,27 +1,10 @@
-<html lang="en" itemscope itemtype="http://schema.org/Article">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurants.css') }}">
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
-    </script>
-    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
-    </script>
-
-    <script>
-        function start() {
-            gapi.load('auth2', function() {
-            auth2 = gapi.auth2.init({
-            client_id: '1090073792352-i22ip09eeb2pqke3djl8p1jhtqsa0sd6.apps.googleusercontent.com'
-            // Scopes to request in addition to 'profile' and 'email'
-            //scope: 'additional_scope'
-        });
-      });
-    }
-  </script>
 
     <title>Tastee</title>
 </head>
@@ -45,18 +28,10 @@
 
             <div>
                 <button id="signinButton">Sign in with Google</button>
-                <script>
-                    $('#signinButton').click(function() {
-                    // signInCallback defined in step 6.
-                    auth2.grantOfflineAccess().then(signInCallback);
-                    });
-                </script>
+                
             </div>
 
-            <div>
-                <p id='user'> </p>
-                <script> $('#user').attr('style', 'display: none');</script>
-            </div>
+            
 
         </div>
 
@@ -81,39 +56,6 @@
             {% endfor %}
         </div>
     </div>
-
-    <script>
-        function signInCallback(authResult) {
-          if (authResult['code']) {
-        
-            // Hide the sign-in button now that the user is authorized, for example:
-            $('#signinButton').attr('style', 'display: none');
-            
-            $('#user').attr('style', 'display: show');
-
-            // Send the code to the server
-            $.ajax({
-              type: 'POST',
-              url: 'https://tasteemenu.herokuapp.com/storeauthcode',
-              // Always include an `X-Requested-With` header in every AJAX request,
-              // to protect against CSRF attacks.
-              headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-              },
-              contentType: 'application/octet-stream; charset=utf-8',
-              success: function(result) {
-                console.log('we made it')
-              },
-              processData: false,
-              data: authResult['code']
-            });
-          } else {
-            // There was an error.
-            data: authResult['none']
-            console.log('error happened')
-          }
-        }
-        </script>
 
 </body>
 </html>
